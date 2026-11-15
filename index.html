@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goitom Yohala | Senior-Track Full-Stack &amp; Backend Software Engineer</title>
+  <meta name="description" content="Portfolio and engineering profile of Goitom Yohala, Full-Stack Software Engineer specializing in Django REST Framework, React, PostgreSQL, Docker, and Institutional ERP Systems." />
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+            },
+            surface: {
+              950: '#050807',
+              900: '#0a100d',
+              850: '#0f1814',
+              800: '#15241e',
+              700: '#1f342b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #050807;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .hero-glow {
+      background: radial-gradient(circle 650px at 50% 40%, rgba(16, 185, 129, 0.16), rgba(5, 8, 7, 0) 70%);
+    }
+    .glass-card {
+      background: rgba(15, 24, 20, 0.65);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(16, 185, 129, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px -10px rgba(16, 185, 129, 0.22);
+    }
+    .btn-emerald {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+      transition: all 0.25s ease;
+    }
+    .btn-emerald:hover {
+      background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+      box-shadow: 0 6px 28px rgba(16, 185, 129, 0.5);
+      transform: translateY(-1px);
+    }
+    .btn-purple {
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      box-shadow: 0 4px 18px rgba(99, 102, 241, 0.3);
+      transition: all 0.25s ease;
+    }
+    .btn-purple:hover {
+      background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+      box-shadow: 0 6px 24px rgba(99, 102, 241, 0.45);
+      transform: translateY(-1px);
+    }
+    .code-container::-webkit-scrollbar {
+      height: 6px;
+    }
+    .code-container::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+    }
+    @keyframes slideUpFade {
+      from { opacity: 0; transform: translate(-50%, 15px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+    .toast-anim {
+      animation: slideUpFade 0.25s ease forwards;
+    }
+    
+    /* Professional Print Stylesheet: Converts to clean executive resume when printed or saved as PDF */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #1a202c !important;
+      }
+      header, footer, #toast, .no-print, button, .hero-glow {
+        display: none !important;
+      }
+      .glass-card {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        color: #1a202c !important;
+      }
+      h1, h2, h3, h4, span, p, li {
+        color: #1a202c !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+<body class="min-h-screen relative flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <header class="w-full border-b border-white/5 bg-surface-950/85 backdrop-blur-md sticky top-0 z-50 px-6 lg:px-12 py-3.5 flex items-center justify-between no-print">
+    <!-- Brand / Identity -->
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 via-brand-500 to-brand-700 flex items-center justify-center shadow-lg shadow-brand-500/20 text-white font-black text-base group-hover:scale-105 transition-transform">
+        GY
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-white font-extrabold tracking-tight text-base sm:text-lg">Goitom Yohala</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" title="Available for hire"></span>
+        </div>
+        <span class="text-[11px] font-semibold text-brand-400 tracking-wider uppercase block">Full-Stack &amp; Backend Engineer</span>
+      </div>
+    </a>
+
+    <!-- Navigation Links & Actions -->
+    <div class="flex items-center gap-4 sm:gap-6">
+      <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-400">
+        <a href="#impact" class="hover:text-white transition-colors">Impact</a>
+        <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+        <a href="#architecture" class="hover:text-white transition-colors">System Architecture</a>
+        <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+      </nav>
+
+      <!-- Print / Save as PDF Button -->
+      <button onclick="window.print()" class="text-xs font-semibold text-slate-300 hover:text-white transition-colors hidden sm:flex items-center gap-1.5 bg-white/5 hover:bg-white/10 px-3.5 py-2 rounded-xl border border-white/10" title="Print or save as PDF">
+        <svg class="w-3.5 h-3.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+        <span>Print Resume</span>
+      </button>
+
+      <!-- Contact Button -->
+      <button onclick="openHireModal()" class="btn-purple px-5 py-2 rounded-xl text-white font-bold text-xs sm:text-sm tracking-wide flex items-center gap-1.5">
+        <span>Hire Me</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION (Matching Reference Visual Layout) ==================== -->
+  <main class="relative flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 pt-16 pb-20 hero-glow">
+    <div class="max-w-4xl mx-auto space-y-6">
+      
+      <!-- Top Tag Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-xs font-bold tracking-wider uppercase mb-1">
+        <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+        Django REST Framework &bull; React &bull; PostgreSQL &bull; Docker &bull; React Native
+      </div>
+
+      <!-- Main Headline (Large Bold Centered, Same style as reference) -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08]">
+        Full-Stack &amp; Enterprise<br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-brand-400">
+          Software Engineer
+        </span>
+      </h1>
+
+      <!-- Description Subtitle (Exact layout and tone as reference) -->
+      <p class="text-slate-400 text-base sm:text-lg lg:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
+        Software Engineering graduate specialized in building secure backend services, robust API pipelines, and interactive web/mobile user interfaces for institutional ERP systems. Strong in Django REST Framework, PostgreSQL, role-based access control (RBAC), and containerized deployments with Docker.
+      </p>
+
+      <!-- Primary CTA Action (Exact matching emerald button) -->
+      <div class="pt-4 flex flex-col items-center gap-3.5">
+        <div class="flex flex-col sm:flex-row items-center gap-3.5">
+          <button onclick="openHireModal()" class="btn-emerald px-8 py-4 rounded-xl text-white font-extrabold text-base tracking-wide flex items-center gap-2.5 cursor-pointer">
+            <span>Schedule Interview / Hire</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </button>
+          
+          <a href="mailto:gyhennery89@gmail.com" class="glass-card px-6 py-4 rounded-xl text-white font-bold text-sm hover:border-brand-500/40 flex items-center gap-2 transition-all">
+            <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <span>gyhennery89@gmail.com</span>
+          </a>
+        </div>
+
+        <p class="text-xs text-brand-400/90 font-medium">
+          Addis Ababa, Ethiopia &bull; Tel: +251 978 629 718 &bull; Available Immediately for Full-Time Roles
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Floating Emblem (matching 'N' icon in reference image) -->
+    <div class="fixed bottom-6 left-6 z-40 hidden sm:flex items-center justify-center w-11 h-11 rounded-full bg-surface-900 border border-white/10 text-white font-black text-sm shadow-2xl hover:border-brand-500/60 hover:scale-110 transition-all cursor-pointer no-print" onclick="openHireModal()" title="Connect with Goitom Yohala">
+      G
+    </div>
+  </main>
+
+  <!-- ==================== HIRING VALUE & IMPACT METRICS ==================== -->
+  <section id="impact" class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      
+      <div class="glass-card rounded-2xl p-5 text-center">
+        <div class="text-3xl font-black text-white tracking-tight">100%</div>
+        <div class="text-xs font-bold text-brand-400 uppercase tracking-wider mt-1">Full-Stack Coverage</div>
+        <p class="text-[11px] text-slate-400 mt-0.5">Frontend, Backend, DB &amp; Mobile</p>
+      </div>
+
+      <div class="glass-card rounded-2xl p-5 text-center">
+        <div class="text-3xl font-black text-white tracking-tight">Institutional</div>
+        <div class="text-xs font-bold text-brand-400 uppercase tracking-wider mt-1">ERP Experience</div>
+        <p class="text-[11px] text-slate-400 mt-0.5">RBAC &amp; High Data Security</p>
+      </div>
+
+      <div class="glass-card rounded-2xl p-5 text-center">
+        <div class="text-3xl font-black text-white tracking-tight">&lt; 50ms</div>
+        <div class="text-xs font-bold text-brand-400 uppercase tracking-wider mt-1">API Performance</div>
+        <p class="text-[11px] text-slate-400 mt-0.5">PostgreSQL Indexing &amp; Redis</p>
+      </div>
+
+      <div class="glass-card rounded-2xl p-5 text-center">
+        <div class="text-3xl font-black text-white tracking-tight">Dockerized</div>
+        <div class="text-xs font-bold text-brand-400 uppercase tracking-wider mt-1">DevOps Delivery</div>
+        <p class="text-[11px] text-slate-400 mt-0.5">Containerized Microservices</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== WHY HIRE GOITOM (HIRING ADVANTAGE) ==================== -->
+  <section class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card rounded-3xl p-8 border border-white/10 relative overflow-hidden">
+      <div class="max-w-3xl mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-bold uppercase tracking-wider mb-2">
+          Hiring Value Proposition
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">What I Bring to Your Engineering Team</h2>
+        <p class="text-sm text-slate-400 mt-1">Proven ability to deliver mission-critical software with production discipline.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2">
+          <div class="text-brand-400 font-bold text-base flex items-center gap-2">
+            <span>🛡️</span> Security &amp; RBAC Architecture
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Hands-on experience implementing enterprise-grade Role-Based Access Control, JWT authentication, and departmental isolation to ensure zero unauthorized data access in high-stakes environments.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2">
+          <div class="text-blue-400 font-bold text-base flex items-center gap-2">
+            <span>⚡</span> End-to-End Speed &amp; Integrity
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            I eliminate the communication gap between frontend and backend. I model PostgreSQL tables, build typed DRF endpoints, and connect them directly into reactive React / React Native user interfaces.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2">
+          <div class="text-purple-400 font-bold text-base flex items-center gap-2">
+            <span>🚀</span> Production Delivery with Docker
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Code runs reliably in development, testing, and production. Standardized multi-container setups using Docker and Docker Compose with automated database migrations and caching configurations.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SYSTEM ARCHITECTURE & GOALS ==================== -->
+  <section id="architecture" class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="glass-card rounded-3xl p-6 sm:p-9 border border-white/10 relative overflow-hidden">
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-bold uppercase tracking-wider mb-2">
+            System Design &amp; Architectural Objectives
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Full-Stack Architecture &amp; Engineering Goals</h2>
+          <p class="text-sm text-slate-400 mt-1">Strategic objectives, data integrity mechanisms, and system design patterns.</p>
+        </div>
+
+        <!-- Architecture Tabs -->
+        <div class="flex items-center gap-1.5 bg-black/40 p-1.5 rounded-xl border border-white/5 self-start md:self-auto no-print">
+          <button onclick="switchTab('backend')" id="tab-backend" class="px-3.5 py-2 rounded-lg text-xs font-bold transition-all bg-brand-500/20 text-brand-300 border border-brand-500/30">
+            Backend &amp; Domain Core
+          </button>
+          <button onclick="switchTab('frontend')" id="tab-frontend" class="px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white">
+            Client &amp; Mobile Ecosystem
+          </button>
+          <button onclick="switchTab('docker')" id="tab-docker" class="px-3.5 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white">
+            DevOps &amp; Infrastructure
+          </button>
+        </div>
+      </div>
+
+      <!-- Architectural Goal Cards Container -->
+      <div class="rounded-2xl bg-surface-950/80 border border-white/10 p-6 sm:p-8">
+        
+        <!-- Tab 1: Backend Core -->
+        <div id="code-backend" class="space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10">
+            <div>
+              <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">Strategic Mission</span>
+              <h3 class="text-xl font-black text-white mt-0.5">High-Throughput, Bulletproof Domain APIs</h3>
+            </div>
+            <span class="px-3 py-1 text-xs font-bold rounded-lg bg-brand-500/10 text-brand-300 border border-brand-500/20 self-start sm:self-auto">
+              Target: Zero Data Inconsistencies &bull; &lt;40ms Execution
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center font-bold text-sm">01</div>
+              <h4 class="text-sm font-bold text-white">Domain-Driven Service Layer</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Decoupled architecture isolating view controllers from core business logic (such as academic clearance, balance deduction, and department rosters). Ensures business rules are strictly enforced and independently testable.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-sm">02</div>
+              <h4 class="text-sm font-bold text-white">Zero-Trust RBAC Perimeter</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Multi-tiered role validation combining cryptographically verified JWT claims with departmental access matrices. Guarantees that sensitive institutional data is strictly partitioned by role and clearance levels.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-sm">03</div>
+              <h4 class="text-sm font-bold text-white">Relational Integrity &amp; Query Caching</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                PostgreSQL schemas designed with foreign keys, compound indexes, and ACID compliance. Leverages eager prefetching (`prefetch_related`) to prevent N+1 queries, with Redis caching for rapid session and lookup reads.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Frontend & Mobile -->
+        <div id="code-frontend" class="hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10">
+            <div>
+              <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Strategic Mission</span>
+              <h3 class="text-xl font-black text-white mt-0.5">Unified Web &amp; Cross-Platform Native Experience</h3>
+            </div>
+            <span class="px-3 py-1 text-xs font-bold rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20 self-start sm:self-auto">
+              Target: Instant Feedback &bull; Shared TypeScript Contracts
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-sm">01</div>
+              <h4 class="text-sm font-bold text-white">Single Source of Type Truth</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Shared TypeScript contracts mirroring backend DTOs across web and mobile. Catches schema mismatches at compile time and prevents runtime data discrepancies across all client interfaces.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-sm">02</div>
+              <h4 class="text-sm font-bold text-white">Optimistic UI &amp; State Sync</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Immediate interface updates with background revalidation. If a network request encounters an error, state automatically rolls back with clear contextual toast feedback to preserve data integrity and user trust.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-sm">03</div>
+              <h4 class="text-sm font-bold text-white">Accessible &amp; Multilingual Design</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                WCAG-compliant keyboard accessibility, localized multi-language dictionaries (Amharic, English, Tigrinya), and fluid dark-mode design systems built with Tailwind CSS.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: DevOps & Infrastructure -->
+        <div id="code-docker" class="hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10">
+            <div>
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Strategic Mission</span>
+              <h3 class="text-xl font-black text-white mt-0.5">Reliable Containerization &amp; Zero-Downtime Delivery</h3>
+            </div>
+            <span class="px-3 py-1 text-xs font-bold rounded-lg bg-amber-500/10 text-amber-300 border border-amber-500/20 self-start sm:self-auto">
+              Target: 99.9% Availability &bull; Deterministic Deployments
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-sm">01</div>
+              <h4 class="text-sm font-bold text-white">Multi-Stage Docker Builds</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Separation of build-time dependencies from slim runtime containers. Produces secure, lightweight images, reducing deployment times and minimizing vulnerability attack surfaces.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-400 flex items-center justify-center font-bold text-sm">02</div>
+              <h4 class="text-sm font-bold text-white">Service Mesh &amp; Isolated Networking</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Internal private bridge networks isolating the PostgreSQL database and Redis caching servers from the public internet. Only the web gateway and reverse proxy expose hardened HTTP/HTTPS ports.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-black/40 border border-white/5 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-sm">03</div>
+              <h4 class="text-sm font-bold text-white">Stateless Horizontal Scaling</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Application instances designed entirely stateless via JWT authentication and decoupled cache layers. New API worker nodes can be provisioned on demand without shared memory conflicts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Architectural Pipeline Diagram -->
+      <div class="mt-6 pt-6 border-t border-white/5 grid grid-cols-1 sm:grid-cols-4 gap-3.5 text-center text-xs">
+        <div class="p-4 rounded-xl bg-black/30 border border-white/5">
+          <span class="text-blue-400 font-extrabold block mb-1">1. User Client Layer</span>
+          <span class="text-slate-300 font-medium">Next.js Web &bull; React Native App</span>
+          <p class="text-[10px] text-slate-500 mt-1">Optimistic UI &bull; Typed Contracts</p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/30 border border-white/5">
+          <span class="text-purple-400 font-extrabold block mb-1">2. Gateway &amp; Auth</span>
+          <span class="text-slate-300 font-medium">JWT &bull; RBAC Permission Matrix</span>
+          <p class="text-[10px] text-slate-500 mt-1">Zero-Trust Identity Verification</p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/30 border border-white/5">
+          <span class="text-brand-400 font-extrabold block mb-1">3. Core Domain APIs</span>
+          <span class="text-slate-300 font-medium">Django REST &bull; Modular Services</span>
+          <p class="text-[10px] text-slate-500 mt-1">ACID Transactions &bull; Business Rules</p>
+        </div>
+        <div class="p-4 rounded-xl bg-black/30 border border-white/5">
+          <span class="text-emerald-400 font-extrabold block mb-1">4. Persistence &amp; Caching</span>
+          <span class="text-slate-300 font-medium">PostgreSQL &bull; Redis In-Memory</span>
+          <p class="text-[10px] text-slate-500 mt-1">Indexed Queries &bull; Sub-50ms Latency</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS & TECHNICAL COMPETENCIES ==================== -->
+  <section id="skills" class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-3">
+          <span class="w-2.5 h-6 bg-brand-500 rounded-full"></span>
+          Comprehensive Technical Stack
+        </h2>
+        <p class="text-sm text-slate-400 mt-1">Tools and frameworks applied in enterprise production environments.</p>
+      </div>
+
+      <!-- Skill Filter Pills -->
+      <div class="flex items-center gap-1.5 flex-wrap no-print">
+        <button onclick="filterSkills('all')" class="skill-tab-btn active px-3.5 py-1.5 rounded-lg text-xs font-bold bg-brand-500/20 text-brand-300 border border-brand-500/30">All</button>
+        <button onclick="filterSkills('backend')" class="skill-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-white/5 text-slate-400 hover:text-white border border-white/5">Backend</button>
+        <button onclick="filterSkills('frontend')" class="skill-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-white/5 text-slate-400 hover:text-white border border-white/5">Frontend &amp; Mobile</button>
+        <button onclick="filterSkills('data')" class="skill-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-white/5 text-slate-400 hover:text-white border border-white/5">Data &amp; DevOps</button>
+      </div>
+    </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="skills-grid">
+      
+      <!-- Backend Card -->
+      <div class="glass-card rounded-2xl p-6 skill-item" data-category="backend">
+        <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-4 font-bold text-lg border border-brand-500/20">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1">Backend &amp; API Engineering</h3>
+        <p class="text-xs text-slate-400 mb-4">RESTful APIs, asynchronous services &amp; secure controllers.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-brand-500/10 text-brand-300 border border-brand-500/20 font-semibold hover:border-brand-500/40 transition-colors"><i class="devicon-python-plain colored text-sm"></i> Python</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-brand-500/10 text-brand-300 border border-brand-500/20 font-semibold hover:border-brand-500/40 transition-colors"><i class="devicon-django-plain colored text-sm"></i> Django</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-brand-500/20 text-brand-200 border border-brand-500/40 font-bold hover:border-brand-500/60 transition-colors"><i class="devicon-django-plain colored text-sm"></i> Django REST Framework</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-white/5 text-slate-200 border border-white/10 font-medium hover:border-white/20 transition-colors"><i class="devicon-nodejs-plain colored text-sm"></i> Node.js</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-white/5 text-slate-200 border border-white/10 font-medium hover:border-white/20 transition-colors"><i class="devicon-express-original text-sm text-slate-100"></i> Express.js</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-white/5 text-slate-200 border border-white/10 font-medium hover:border-white/20 transition-colors"><i class="devicon-nestjs-original colored text-sm"></i> NestJS</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-white/5 text-slate-200 border border-white/10 font-medium hover:border-white/20 transition-colors"><i class="devicon-fastapi-plain colored text-sm"></i> RESTful APIs</span>
+        </div>
+      </div>
+
+      <!-- Frontend Card -->
+      <div class="glass-card rounded-2xl p-6 skill-item" data-category="frontend">
+        <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4 font-bold text-lg border border-blue-500/20">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1">Frontend &amp; Mobile</h3>
+        <p class="text-xs text-slate-400 mb-4">Modern component-driven web apps and cross-platform native.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 font-medium hover:border-yellow-500/40 transition-colors"><i class="devicon-javascript-plain colored text-sm"></i> JavaScript (ES6+)</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-blue-500/10 text-blue-300 border border-blue-500/20 font-semibold hover:border-blue-500/40 transition-colors"><i class="devicon-typescript-plain colored text-sm"></i> TypeScript</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 font-bold hover:border-cyan-500/50 transition-colors"><i class="devicon-react-original colored text-sm"></i> React &amp; Next.js</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 font-bold hover:border-cyan-500/50 transition-colors"><i class="devicon-react-original colored text-sm"></i> React Native</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-sky-500/10 text-sky-300 border border-sky-500/20 font-medium hover:border-sky-500/40 transition-colors"><i class="devicon-tailwindcss-original colored text-sm"></i> Tailwind CSS</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-orange-500/10 text-orange-300 border border-orange-500/20 font-medium hover:border-orange-500/40 transition-colors"><i class="devicon-html5-plain colored text-sm"></i> HTML5</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-blue-500/10 text-blue-300 border border-blue-500/20 font-medium hover:border-blue-500/40 transition-colors"><i class="devicon-css3-plain colored text-sm"></i> CSS3</span>
+        </div>
+      </div>
+
+      <!-- Data Card -->
+      <div class="glass-card rounded-2xl p-6 skill-item" data-category="data">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4 font-bold text-lg border border-emerald-500/20">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1">Databases &amp; Caching</h3>
+        <p class="text-xs text-slate-400 mb-4">Relational modeling, indexing, NoSQL stores &amp; fast caching.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-brand-500/20 text-brand-300 border border-brand-500/30 font-bold hover:border-brand-500/50 transition-colors"><i class="devicon-postgresql-plain colored text-sm"></i> PostgreSQL</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-white/5 text-slate-200 border border-white/10 font-medium hover:border-white/20 transition-colors"><i class="devicon-mongodb-plain colored text-sm"></i> MongoDB</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-red-500/10 text-red-300 border border-red-500/20 font-bold hover:border-red-500/40 transition-colors"><i class="devicon-redis-plain colored text-sm"></i> Redis Cache</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-white/5 text-slate-200 border border-white/10 font-medium hover:border-white/20 transition-colors"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Schema Design</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-white/5 text-slate-200 border border-white/10 font-medium hover:border-white/20 transition-colors"><svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> Query Optimization</span>
+        </div>
+      </div>
+
+      <!-- Security Card -->
+      <div class="glass-card rounded-2xl p-6 skill-item" data-category="backend">
+        <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 font-bold text-lg border border-purple-500/20">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1">Security &amp; IAM</h3>
+        <p class="text-xs text-slate-400 mb-4">Role-based access control, cryptographic verification &amp; tokens.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-purple-500/15 text-purple-300 border border-purple-500/30 font-semibold hover:border-purple-500/50 transition-colors"><svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg> RBAC Permissions</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-pink-500/10 text-pink-300 border border-pink-500/25 font-semibold hover:border-pink-500/45 transition-colors"><svg class="w-3.5 h-3.5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg> JWT Authentication</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-white/5 text-slate-200 border border-white/10 font-medium hover:border-white/20 transition-colors"><svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Authorization Guards</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-white/5 text-slate-200 border border-white/10 font-medium hover:border-white/20 transition-colors"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg> Token Lifecycle</span>
+        </div>
+      </div>
+
+      <!-- DevOps Card -->
+      <div class="glass-card rounded-2xl p-6 skill-item" data-category="data">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4 font-bold text-lg border border-amber-500/20">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1">DevOps &amp; Infrastructure</h3>
+        <p class="text-xs text-slate-400 mb-4">Containerization, CI/CD, versioning &amp; deployment concepts.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-sky-500/10 text-sky-300 border border-sky-500/20 font-semibold hover:border-sky-500/40 transition-colors"><i class="devicon-docker-plain colored text-sm"></i> Docker</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-orange-500/10 text-orange-300 border border-orange-500/20 font-semibold hover:border-orange-500/40 transition-colors"><i class="devicon-git-plain colored text-sm"></i> Git</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-white/5 text-slate-200 border border-white/10 font-medium hover:border-white/20 transition-colors"><i class="devicon-github-original text-sm text-white"></i> GitHub</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-blue-500/10 text-blue-300 border border-blue-500/20 font-medium hover:border-blue-500/40 transition-colors"><i class="devicon-kubernetes-plain colored text-sm"></i> Kubernetes</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-blue-600/10 text-blue-300 border border-blue-600/20 font-medium hover:border-blue-600/40 transition-colors"><i class="devicon-vscode-plain colored text-sm"></i> VS Code</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-medium hover:border-emerald-500/40 transition-colors"><i class="devicon-androidstudio-plain colored text-sm"></i> Android Studio</span>
+        </div>
+      </div>
+
+      <!-- Practices Card -->
+      <div class="glass-card rounded-2xl p-6 skill-item" data-category="backend">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4 font-bold text-lg border border-cyan-500/20">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1">Software Practices</h3>
+        <p class="text-xs text-slate-400 mb-4">Clean code, automated testing, agile methodology and documentation.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-brand-500/10 text-brand-300 border border-brand-500/20 font-semibold hover:border-brand-500/40 transition-colors"><svg class="w-3.5 h-3.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg> Modular Architecture</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-blue-500/10 text-blue-300 border border-blue-500/20 font-medium hover:border-blue-500/40 transition-colors"><i class="devicon-jira-plain colored text-sm"></i> Agile &amp; Scrum</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-red-500/10 text-red-300 border border-red-500/20 font-medium hover:border-red-500/40 transition-colors"><i class="devicon-jest-plain colored text-sm"></i> Jest &amp; Unit Tests</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-xl bg-white/5 text-slate-200 border border-white/10 font-medium hover:border-white/20 transition-colors"><i class="devicon-markdown-original text-sm text-slate-300"></i> Tech Documentation</span>
+        </div>
+      </div>
+
+    </div>
+  
+  </section>
+
+  <!-- ==================== PROFESSIONAL EXPERIENCE ==================== -->
+  <section id="experience" class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
+    <div>
+      <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-3">
+        <span class="w-2.5 h-6 bg-brand-500 rounded-full"></span>
+        Production Engineering Experience
+      </h2>
+      <p class="text-sm text-slate-400 mt-1">Real-world institutional software development and deployment.</p>
+    </div>
+
+    <div class="glass-card rounded-3xl p-7 sm:p-9 border border-white/10 relative overflow-hidden">
+      <div class="absolute -right-24 -top-24 w-72 h-72 bg-brand-500/10 blur-3xl rounded-full pointer-events-none"></div>
+
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-5">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-brand-500/10 text-brand-400 text-xs font-bold uppercase tracking-wider mb-2">
+            Production Engineering
+          </div>
+          <h3 class="text-xl sm:text-2xl font-black text-white">Full-Stack Software Engineer Intern</h3>
+          <p class="text-brand-300 text-sm font-semibold mt-0.5">
+            Adey Technology Solutions PLC &amp; Robel &amp; Gebrehaweriya Digital Technology Solutions Partnership
+          </p>
+        </div>
+        <span class="px-4 py-1.5 text-xs font-bold rounded-full bg-white/5 border border-white/10 text-slate-300 self-start md:self-auto shadow-inner">
+          February 2026 – April 2026
+        </span>
+      </div>
+
+      <!-- Project Badge Bar -->
+      <div class="p-4 rounded-2xl bg-black/40 border border-white/5 mb-6">
+        <div class="flex items-center gap-2 text-xs font-bold text-white mb-2">
+          <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+          <span>Core System: Mandela Institutional ERP System</span>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="px-2.5 py-1 text-xs rounded bg-white/5 text-slate-200 border border-white/5 font-mono">Django</span>
+          <span class="px-2.5 py-1 text-xs rounded bg-white/5 text-slate-200 border border-white/5 font-mono">Django REST Framework</span>
+          <span class="px-2.5 py-1 text-xs rounded bg-white/5 text-slate-200 border border-white/5 font-mono">React</span>
+          <span class="px-2.5 py-1 text-xs rounded bg-white/5 text-slate-200 border border-white/5 font-mono">PostgreSQL</span>
+          <span class="px-2.5 py-1 text-xs rounded bg-white/5 text-slate-200 border border-white/5 font-mono">Redis</span>
+          <span class="px-2.5 py-1 text-xs rounded bg-white/5 text-slate-200 border border-white/5 font-mono">Docker</span>
+        </div>
+      </div>
+
+      <!-- Responsibilities List -->
+      <ul class="space-y-3 text-sm text-slate-300 leading-relaxed">
+        <li class="flex items-start gap-3">
+          <span class="text-brand-400 font-bold mt-0.5">&bull;</span>
+          <span><strong>RESTful APIs &amp; Data Models:</strong> Engineered robust RESTful endpoints and optimized PostgreSQL schemas for the platform's backend; connected and unified them with interactive React user interfaces.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-400 font-bold mt-0.5">&bull;</span>
+          <span><strong>Security &amp; Access Controls:</strong> Architected role-based access control (RBAC), token authentication, and granular permission enforcement across institutional departmental entities.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-400 font-bold mt-0.5">&bull;</span>
+          <span><strong>Multi-Module ERP Contributions:</strong> Designed and implemented modules across Financial Management, Academic Management, Governance, Workflow Automation, and Document Management.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-400 font-bold mt-0.5">&bull;</span>
+          <span><strong>Containerization &amp; DevOps:</strong> Structured modular service architecture and containerized services utilizing Docker and Kubernetes concepts to maintain reliable environments.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-400 font-bold mt-0.5">&bull;</span>
+          <span><strong>Quality Assurance:</strong> Conducted integration testing, automated unit testing, bug isolation, and query performance optimizations.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED PROJECTS ==================== -->
+  <section id="projects" class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
+    <div>
+      <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-3">
+        <span class="w-2.5 h-6 bg-brand-500 rounded-full"></span>
+        Key Projects &amp; Implementations
+      </h2>
+      <p class="text-sm text-slate-400 mt-1">Full-stack applications with focus on security, data integrity and user experience.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Project 1: Mobile Banking App -->
+      <div class="glass-card rounded-3xl p-7 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-bold text-brand-400 tracking-wider uppercase bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
+              Mobile &bull; Fintech
+            </span>
+            <span class="text-xs font-mono text-slate-400">React Native / Expo</span>
+          </div>
+
+          <h3 class="text-2xl font-black text-white group-hover:text-brand-300 transition-colors">Mobile Banking Application</h3>
+          <p class="text-xs text-slate-400 mt-1 font-mono">React Native, Expo, Node.js, Express.js, MongoDB, JWT</p>
+
+          <p class="text-sm text-slate-300 leading-relaxed mt-4">
+            A production-oriented mobile fintech client connected to secure backend REST services. Engineered with JWT-based authentication, real-time account balances, secure payment transactions, and ledger record keeping.
+          </p>
+
+          <div class="mt-5 space-y-2 text-xs text-slate-400">
+            <div class="flex items-center gap-2">
+              <span class="text-brand-400">&#10003;</span>
+              <span>Encrypted JWT authentication and token refreshment</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-brand-400">&#10003;</span>
+              <span>Account management &amp; payment gateway exploration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between">
+          <span class="text-xs font-semibold text-brand-400">Status: Complete &bull; Verified</span>
+          <span class="text-xs font-bold text-white flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            View Details &rarr;
+          </span>
+        </div>
+      </div>
+
+      <!-- Project 2: Humanitarian Charity ERP -->
+      <div class="glass-card rounded-3xl p-7 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[11px] font-bold text-purple-400 tracking-wider uppercase bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">
+              Enterprise System Design
+            </span>
+            <span class="text-xs font-mono text-slate-400">NestJS / Python</span>
+          </div>
+
+          <h3 class="text-2xl font-black text-white group-hover:text-purple-300 transition-colors">Humanitarian Charity Management ERP</h3>
+          <p class="text-xs text-slate-400 mt-1 font-mono">React, TypeScript, Node.js, NestJS, Python</p>
+
+          <p class="text-sm text-slate-300 leading-relaxed mt-4">
+            Full-stack system architecture conceived for non-profit and NGO operations. Integrates beneficiary registration, donor tracking, multi-currency ledger allocation, automated financial reporting, and fraud detection.
+          </p>
+
+          <div class="mt-5 space-y-2 text-xs text-slate-400">
+            <div class="flex items-center gap-2">
+              <span class="text-purple-400">&#10003;</span>
+              <span>Beneficiary &amp; donor association pipelines</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-purple-400">&#10003;</span>
+              <span>Auditable reconciliation &amp; fraud mitigation algorithms</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between">
+          <span class="text-xs font-semibold text-purple-400">Status: Architectural Design</span>
+          <span class="text-xs font-bold text-white flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            View Specification &rarr;
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== EDUCATION & LANGUAGES ==================== -->
+  <section class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Education Card -->
+      <div class="glass-card rounded-3xl p-8">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center font-bold text-lg">
+            🎓
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">Higher Education</h3>
+            <p class="text-xs text-slate-400">Academic Background &amp; Honors</p>
+          </div>
+        </div>
+
+        <div class="space-y-1.5 pt-2">
+          <h4 class="text-lg font-black text-white">Bachelor of Science in Software Engineering</h4>
+          <p class="text-brand-300 text-sm font-semibold">Mekelle University &bull; College of Computing</p>
+          <p class="text-xs text-slate-400">Ethiopia &bull; Class of 2026</p>
+          <div class="pt-3">
+            <span class="inline-block px-3 py-1 rounded-lg bg-white/5 text-slate-300 text-xs font-medium border border-white/5">
+              Curriculum: Distributed Systems, Web Architectures, Database Modeling, OOP
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Languages Card -->
+      <div class="glass-card rounded-3xl p-8">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-lg">
+            🌐
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">Language Proficiency</h3>
+            <p class="text-xs text-slate-400">Multilingual Communication</p>
+          </div>
+        </div>
+
+        <div class="space-y-3 pt-2">
+          <div class="flex items-center justify-between p-3 rounded-xl bg-black/30 border border-white/5">
+            <span class="text-sm font-bold text-white">Tigrinya</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 font-bold">Native / Mother Tongue</span>
+          </div>
+          <div class="flex items-center justify-between p-3 rounded-xl bg-black/30 border border-white/5">
+            <span class="text-sm font-bold text-white">Amharic</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-slate-300 border border-white/10 font-bold">Fluent Professional</span>
+          </div>
+          <div class="flex items-center justify-between p-3 rounded-xl bg-black/30 border border-white/5">
+            <span class="text-sm font-bold text-white">English</span>
+            <span class="text-xs px-3 py-1 rounded-full bg-white/5 text-slate-300 border border-white/10 font-bold">Fluent Professional</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CALL TO ACTION FOOTER ==================== -->
+  <section class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center no-print">
+    <div class="glass-card rounded-3xl p-10 sm:p-14 border border-brand-500/20 relative overflow-hidden">
+      <div class="max-w-2xl mx-auto space-y-4">
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          Ready to Add Value to Your Engineering Team?
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Open to full-stack, backend, and mobile software engineering roles. Let's discuss how my hands-on experience in Django, React, PostgreSQL, and institutional ERP systems can accelerate your roadmap.
+        </p>
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-3">
+          <button onclick="openHireModal()" class="btn-emerald px-8 py-3.5 rounded-xl text-white font-bold text-sm tracking-wide">
+            Get in Touch / Hire
+          </button>
+          <a href="mailto:gyhennery89@gmail.com" class="glass-card px-6 py-3.5 rounded-xl text-white font-bold text-sm hover:border-brand-500/40">
+            Email Directly
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BOTTOM FOOTER ==================== -->
+  <footer class="w-full border-t border-white/5 bg-surface-950 py-8 px-6 text-xs text-slate-500 no-print">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; 2026 Goitom Yohala. All rights reserved.</p>
+      <div class="flex items-center gap-6 font-semibold">
+        <a href="mailto:gyhennery89@gmail.com" class="hover:text-brand-400 transition-colors">gyhennery89@gmail.com</a>
+        <a href="tel:0978629718" class="hover:text-brand-400 transition-colors">+251 978 629 718</a>
+        <a href="https://github.com/goitomyohala" target="_blank" rel="noreferrer" class="hover:text-brand-400 transition-colors">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="hover:text-brand-400 transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== HIRE / CONTACT MODAL ==================== -->
+  <div id="hireModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden no-print">
+    <div class="relative w-full max-w-lg glass-card rounded-3xl p-8 border border-brand-500/30 shadow-2xl space-y-6">
+      
+      <div class="flex items-center justify-between border-b border-white/5 pb-4">
+        <div>
+          <h3 class="text-xl font-black text-white">Contact Goitom Yohala</h3>
+          <p class="text-xs text-brand-400 mt-0.5">Full-Stack &amp; Backend Software Engineer</p>
+        </div>
+        <button onclick="closeHireModal()" class="text-slate-400 hover:text-white p-1 rounded-lg bg-white/5">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-sm">
+        <div class="p-4 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <div>
+            <span class="text-xs text-slate-400 block font-semibold">Primary Email</span>
+            <span class="text-white font-mono font-bold">gyhennery89@gmail.com</span>
+          </div>
+          <button onclick="copyToClipboard('gyhennery89@gmail.com', 'Email copied to clipboard!')" class="px-3 py-1.5 rounded-lg bg-brand-500/10 text-brand-400 hover:bg-brand-500/20 text-xs font-bold border border-brand-500/20">
+            Copy
+          </button>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <div>
+            <span class="text-xs text-slate-400 block font-semibold">Direct Phone / WhatsApp</span>
+            <span class="text-white font-mono font-bold">+251 978 629 718</span>
+          </div>
+          <button onclick="copyToClipboard('0978629718', 'Phone copied to clipboard!')" class="px-3 py-1.5 rounded-lg bg-brand-500/10 text-brand-400 hover:bg-brand-500/20 text-xs font-bold border border-brand-500/20">
+            Copy
+          </button>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <div>
+            <span class="text-xs text-slate-400 block font-semibold">Location</span>
+            <span class="text-white font-medium">Addis Ababa, Ethiopia (Open to Remote / Relocation)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="mailto:gyhennery89@gmail.com?subject=Software%20Engineering%20Opportunity%20-%20Interview%20Invitation" class="btn-emerald py-3.5 rounded-xl text-white font-bold text-center text-sm">
+          Open Email Client (gyhennery89@gmail.com)
+        </a>
+        <button onclick="closeHireModal()" class="py-2.5 rounded-xl text-slate-400 hover:text-white text-xs font-semibold">
+          Close Window
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-xl bg-surface-900 border border-brand-500/40 text-brand-300 text-xs font-bold shadow-2xl flex items-center gap-2 hidden no-print">
+    <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- ==================== INTERACTIVE JAVASCRIPT ==================== -->
+  <script>
+    // Modal Helpers
+    function openHireModal() {
+      document.getElementById('hireModal').classList.remove('hidden');
+    }
+    function closeHireModal() {
+      document.getElementById('hireModal').classList.add('hidden');
+    }
+
+    // Close on Escape or click outside
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeHireModal();
+    });
+    document.getElementById('hireModal').addEventListener('click', function(e) {
+      if (e.target === this) closeHireModal();
+    });
+
+    // Copy to clipboard helper
+    function copyToClipboard(text, message) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => showToast(message));
+      } else {
+        const input = document.createElement('textarea');
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        showToast(message);
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const msg = document.getElementById('toast-message');
+      msg.textContent = message;
+      toast.classList.remove('hidden');
+      toast.classList.add('toast-anim');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('toast-anim');
+      }, 3000);
+    }
+
+    // Architecture Code Tabs
+    function switchTab(tab) {
+      const tabs = ['backend', 'frontend', 'docker'];
+      tabs.forEach(t => {
+        const codeEl = document.getElementById(`code-${t}`);
+        const btnEl = document.getElementById(`tab-${t}`);
+        if (t === tab) {
+          codeEl.classList.remove('hidden');
+          btnEl.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all bg-brand-500/20 text-brand-300 border border-brand-500/30';
+        } else {
+          codeEl.classList.add('hidden');
+          btnEl.className = 'px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white';
+        }
+      });
+    }
+
+    // Skill Category Filtering
+    function filterSkills(category) {
+      const items = document.querySelectorAll('.skill-item');
+      const btns = document.querySelectorAll('.skill-tab-btn');
+
+      btns.forEach(btn => {
+        if (btn.textContent.toLowerCase().includes(category)) {
+          btn.className = 'skill-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-brand-500/20 text-brand-300 border border-brand-500/30';
+        } else {
+          btn.className = 'skill-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-white/5 text-slate-400 hover:text-white border border-white/5';
+        }
+      });
+
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
