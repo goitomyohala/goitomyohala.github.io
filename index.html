@@ -156,10 +156,10 @@
         <span>Print Resume</span>
       </button>
 
-            <!-- Mobile Menu Toggle Button (matches reference) -->
-      <button id="mobile-menu-open-btn" onclick="openMobileMenu()" class="md:hidden flex items-center justify-center w-11 h-11 rounded-2xl bg-white/5 border border-white/10 text-slate-200 hover:text-white hover:bg-white/10 transition-all cursor-pointer shadow-lg" aria-label="Open Navigation Menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  <!-- Mobile Menu Toggle Button (matches reference) -->
+      <button id="mobile-menu-open-btn" onclick="openMobileMenu()" class="md:hidden flex items-center justify-center w-11 h-11 rounded-2xl bg-white/10 border border-white/20 text-slate-100 hover:text-white hover:bg-white/20 active:scale-95 transition-all cursor-pointer shadow-lg active:bg-blue-600/30 active:border-blue-400" aria-label="Open Navigation Menu">
+        <svg class="w-6 h-6 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
       <!-- Contact Button -->
@@ -169,21 +169,21 @@
       </button>
     </div>
   </header>
-  <!-- ==================== MOBILE SLIDE-OUT DRAWER MENU (EXACT TO REFERENCE) ==================== -->
-  <div id="mobile-menu-backdrop" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none md:hidden" onclick="closeMobileMenu()">
-    <div id="mobile-menu-drawer" class="relative w-[82%] max-w-[320px] h-full bg-[#05080c]/95 border-r border-white/10 shadow-2xl flex flex-col justify-between p-7 transform -translate-x-full transition-transform duration-300 ease-out" onclick="event.stopPropagation()">
+    <!-- ==================== MOBILE SLIDE-OUT DRAWER MENU ==================== -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none md:hidden" onclick="closeMobileMenu()">
+    <div id="mobile-menu-drawer" class="relative w-[80%] max-w-[320px] h-full bg-[#05080c]/98 border-r border-white/10 shadow-2xl flex flex-col justify-between p-7 transform -translate-x-full transition-transform duration-300 ease-out" onclick="event.stopPropagation()">
       
-      <!-- Top Close Button (Exact matching glowing rounded-2xl square) -->
+      <!-- Top Close Button (Glowing rounded-2xl square) -->
       <div>
         <div class="flex items-center justify-start mb-10">
-          <button onclick="closeMobileMenu()" class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-400/30 flex items-center justify-center text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.35)] hover:bg-blue-500/20 hover:scale-105 active:scale-95 transition-all cursor-pointer" aria-label="Close Menu">
-            <svg class="w-6 h-6 stroke-[2.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button onclick="closeMobileMenu()" class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-400/30 flex items-center justify-center text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.35)] hover:bg-blue-500/20 active:scale-95 transition-all cursor-pointer" aria-label="Close Menu">
+            <svg class="w-6 h-6 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
 
-        <!-- Navigation Links (Large bold text matching reference) -->
+        <!-- Navigation Links -->
         <nav class="flex flex-col space-y-6 text-xl font-bold tracking-tight">
           <a href="#about" onclick="closeMobileMenu()" class="text-white hover:text-brand-300 transition-colors">About</a>
           <a href="#skills" onclick="closeMobileMenu()" class="text-white hover:text-brand-300 transition-colors">Skills</a>
@@ -192,13 +192,35 @@
           <a href="#contact" onclick="closeMobileMenu()" class="text-white hover:text-brand-300 transition-colors">Contact</a>
         </nav>
 
-        <!-- Big Rounded Blue Resume Button (Exact matching outline pill) -->
+        <!-- Big Rounded Blue Resume Button -->
         <div class="mt-8">
-          <a href="#resume" onclick="closeMobileMenu()" class="inline-flex items-center justify-center w-full px-7 py-3 rounded-full border-2 border-blue-600 bg-blue-600/15 text-blue-400 text-lg font-bold tracking-wide shadow-[0_0_22px_rgba(37,99,235,0.3)] hover:bg-blue-600 hover:text-white hover:shadow-[0_0_28px_rgba(37,99,235,0.6)] transition-all">
+          <a href="#resume" onclick="closeMobileMenu()" class="inline-flex items-center justify-center w-full px-7 py-3.5 rounded-full border-2 border-blue-600 bg-blue-600/15 text-blue-400 text-lg font-bold tracking-wide shadow-[0_0_22px_rgba(37,99,235,0.3)] hover:bg-blue-600 hover:text-white hover:shadow-[0_0_28px_rgba(37,99,235,0.6)] active:scale-95 transition-all">
             Resume
           </a>
         </div>
       </div>
+
+      <!-- Bottom Social Links -->
+      <div class="pt-6 border-t border-white/10 flex items-center gap-6 text-slate-300">
+        <a href="https://github.com/goitomyohala" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:scale-110 active:scale-95 transition-transform" aria-label="GitHub">
+          <svg class="w-6 h-6 fill-currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:scale-110 active:scale-95 transition-transform" aria-label="Twitter">
+          <svg class="w-6 h-6 fill-currentColor" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:scale-110 active:scale-95 transition-transform" aria-label="LinkedIn">
+          <svg class="w-6 h-6 fill-currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
 
       <!-- Bottom Social / External Icons (GitHub, Twitter/X, LinkedIn) -->
       <div class="pt-6 border-t border-white/5 flex items-center gap-6 text-slate-300">
@@ -1398,6 +1420,40 @@
         }
       });
     }
+  
+    // ==================== MOBILE SLIDE-OUT DRAWER JAVASCRIPT ====================
+    window.openMobileMenu = function() {
+      const backdrop = document.getElementById('mobile-menu-backdrop');
+      const drawer = document.getElementById('mobile-menu-drawer');
+      if (!backdrop || !drawer) {
+        console.error('Mobile menu elements not found');
+        return;
+      }
+      backdrop.classList.remove('pointer-events-none', 'opacity-0');
+      backdrop.classList.add('opacity-100');
+      drawer.classList.remove('-translate-x-full');
+      drawer.classList.add('translate-x-0');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.closeMobileMenu = function() {
+      const backdrop = document.getElementById('mobile-menu-backdrop');
+      const drawer = document.getElementById('mobile-menu-drawer');
+      if (!backdrop || !drawer) return;
+      backdrop.classList.remove('opacity-100');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      drawer.classList.remove('translate-x-0');
+      drawer.classList.add('-translate-x-full');
+      document.body.style.overflow = '';
+    };
+
+    // Close mobile menu on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        window.closeMobileMenu();
+      }
+    });
+
   </script>
 </body>
 </html>
